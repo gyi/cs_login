@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="player" namespace="/player" extends="default">
+		<action name="playerPage" class="com.login.action.PlayerAction" method="playerPage">
+			<result name="success">
+			/WEB-INF/web/player/playerPage.jsp
+			</result>
+			<result name="input">
+			/WEB-INF/web/error.jsp
+			</result>
+		</action>
+		<action name="playerSelect" class="com.login.action.PlayerAction" method="playerSelect">
+			<result name="success" type="json">
+				<param name="includeProperties">players.*,result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+	</package>
+</struts>

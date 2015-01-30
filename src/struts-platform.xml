@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="platform" namespace="/platform" extends="default">
+		<action name="platformPage" class="com.login.action.PlatformAction" method="platformPage">
+			<result name="success">
+			/WEB-INF/web/platform/platformPage.jsp
+			</result>
+			<result name="input">
+			/WEB-INF/web/error.jsp
+			</result>
+		</action>
+		<action name="platformSelect" class="com.login.action.PlatformAction" method="platformSelect">
+			<result name="success" type="json">
+				<param name="includeProperties">platforms.*,result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+		<action name="addPlatform" class="com.login.action.PlatformAction" method="addPlatform">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+		<action name="deletePlatform" class="com.login.action.PlatformAction" method="deletePlatform">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+	</package>
+</struts>

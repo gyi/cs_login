@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+#main {
+		margin-left:50px;
+		margin-top:50px;
+		margin-right:50px;
+		background:white ;
+}
+
+.fileBtn {
+	margin-left:135px
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="login" namespace="/login" extends="default">
+		<action name="logincheck" class="com.login.action.LoginAction" method="logincheck">
+			<result name="success">
+			/WEB-INF/web/loginResult.jsp
+			</result>
+		</action>
+		<action name="changeServerState" class="com.login.action.LoginAction" method="changeServerState">
+			<result name="success">
+			/WEB-INF/web/changeServerState.jsp
+			</result>
+		</action>
+		<action name="findServerInfo" class="com.login.action.LoginAction" method="findServerInfo">
+			<result name="success">
+			/WEB-INF/web/findServerInfo.jsp
+			</result>
+		</action>
+		<action name="getAllServerInfo" class="com.login.action.LoginAction" method="getAllServerInfo">
+			<result name="success">
+			/WEB-INF/web/getAllServerInfo.jsp
+			</result>
+		</action>
+		<action name="getVersionResult" class="com.login.action.LoginAction" method="getVersionResult">
+			<result name="success">
+			/WEB-INF/web/getVersionResult.jsp
+			</result>
+		</action>
+	</package>
+</struts>

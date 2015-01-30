@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="server" namespace="/server" extends="default">
+		<action name="serverPage" class="com.login.action.ServerAction" method="serverPage">
+			<result name="success">
+			/WEB-INF/web/server/serverPage.jsp
+			</result>
+			<result name="input">
+			/WEB-INF/web/error.jsp
+			</result>
+		</action>
+		<action name="serverSelect" class="com.login.action.ServerAction" method="serverSelect">
+			<result name="success" type="json">
+				<param name="includeProperties">serversContainer.*,result</param>
+			</result>
+			<result name="input">
+			/WEB-INF/web/error.jsp
+			</result>
+		</action>
+		<action name="areaSelect" class="com.login.action.ServerAction" method="areaSelect">
+			<result name="success" type="json">
+				<param name="includeProperties">areas.*,result</param>
+			</result>
+			<result name="input">
+			/WEB-INF/web/error.jsp
+			</result>
+		</action>
+		<action name="addArea" class="com.login.action.ServerAction" method="addArea">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+		<action name="addServer" class="com.login.action.ServerAction" method="addServer">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+		<action name="deleteServer" class="com.login.action.ServerAction" method="deleteServer">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+		<action name="deleteArea" class="com.login.action.ServerAction" method="deleteArea">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+		<action name="serverOnOff" class="com.login.action.ServerAction" method="serverOnOff">
+			<result name="success" type="json">
+				<param name="includeProperties">feedback,result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+		<action name="serverToActive" class="com.login.action.ServerAction" method="serverToActive">
+			<result name="success" type="json">
+				<param name="includeProperties">feedback,result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+       			<param name="ignoreHierarchy">false</param>  
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+		</action>
+	</package>
+</struts>

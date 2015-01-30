@@ -1,0 +1,15 @@
+/com
+/config.properties
+/configuration.xml
+/generatorConfig.xml
+/jdbc.properties
+/message_zh_CN.properties
+/struts-admin.xml
+/struts-clientversion.xml
+/struts-login.xml
+/struts-manage.xml
+/struts-platform.xml
+/struts-player.xml
+/struts-server.xml
+/struts.xml
+/template

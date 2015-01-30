@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin" namespace="/admin" extends="default">
+		<interceptors>
+			<interceptor name="rightCheck"
+				class="com.login.interceptors.RightInterceptor">
+			</interceptor>
+			<interceptor-stack name="defaultStack">
+				<interceptor-ref name="rightCheck" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<action name="AdminPage" class="com.login.action.AdminAction"
+			method="AdminPage">
+			<result name="success">
+				/WEB-INF/web/admin/adminPage.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/web/error.jsp
+			</result>
+			<result name="error">
+				/WEB-INF/web/security.jsp
+			</result>
+		</action>
+		<action name="AdminSelect" class="com.login.action.AdminAction"
+			method="adminSelect">
+			<result name="success" type="json">
+				<param name="includeProperties">adminsContainer.*,result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+			<result name="error">
+				/WEB-INF/web/security.jsp
+			</result>
+		</action>
+		<action name="AddAdmin" class="com.login.action.AdminAction"
+			method="adminAdd">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+			<result name="error">
+				/WEB-INF/web/security.jsp
+			</result>
+		</action>
+		<action name="ModifyAdminPage" class="com.login.action.AdminAction"
+			method="adminModifyPage">
+			<result name="success">
+				/WEB-INF/web/admin/adminModifyPage.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/web/error.jsp
+			</result>
+			<result name="error">
+				/WEB-INF/web/security.jsp
+			</result>
+		</action>
+		<action name="ModifyAdminPasswordPage" class="com.login.action.AdminAction"
+			method="adminModifyPage">
+			<result name="success">
+				/WEB-INF/web/admin/adminModifyPasswordPage.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/web/error.jsp
+			</result>
+			<result name="error">
+				/WEB-INF/web/security.jsp
+			</result>
+		</action>
+		<action name="ModifyAdmin" class="com.login.action.AdminAction"
+			method="adminModify">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+			<result name="error">
+				/WEB-INF/web/security.jsp
+			</result>
+		</action>
+		<action name="ModifyAdminPassword" class="com.login.action.AdminAction"
+			method="adminPasswordModify">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+			<result name="error">
+				/WEB-INF/web/security.jsp
+			</result>
+		</action>
+		<action name="DeleteAdmin" class="com.login.action.AdminAction"
+			method="adminDelete">
+			<result name="success" type="json">
+				<param name="includeProperties">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">action</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors.*</param>
+			</result>
+			<result name="error">
+				/WEB-INF/web/security.jsp
+			</result>
+		</action>
+	</package>
+</struts>

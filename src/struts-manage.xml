@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="manage" namespace="/manage" extends="default">
+		<action name="index" class="com.login.action.ManageAction" method="index">
+			<result name="success">
+			/WEB-INF/web/indexManage.jsp
+			</result>
+		</action>
+		<action name="login" class="com.login.action.ManageAction" method="login">
+			<result name="success">
+			/WEB-INF/web/welcome.jsp
+			</result>
+			<result name="input">
+			/WEB-INF/web/indexManage.jsp
+			</result>
+		</action>
+		<action name="loginSuccess" class="com.login.action.ManageAction" method="loginSuccess">
+			<result name="success">
+			/WEB-INF/web/manage.jsp
+			</result>
+			<result name="input">
+			/WEB-INF/web/indexManage.jsp
+			</result>
+		</action>
+		<action name="loginOut" class="com.login.action.ManageAction" method="loginOut">
+			<result name="success">
+			/WEB-INF/web/indexManage.jsp
+			</result>
+			<result name="input">
+			/WEB-INF/web/indexManage.jsp
+			</result>
+		</action>
+		<action name="error" class="com.login.action.ManageAction" method="error">
+			<result name="success">
+			/WEB-INF/web/error.jsp
+			</result>
+		</action>
+		<!-- <action name="manage" class="com.login.action.ManageAction" method="manage">
+			<result name="success">
+			/WEB-INF/web/manage.jsp
+			</result>
+		</action> -->
+	</package>
+</struts>
